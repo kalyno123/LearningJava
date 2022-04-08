@@ -88,15 +88,18 @@ public class Project08 {
     }*/
 
     public static boolean validatePassword(String password) {
-       if(!password.isEmpty() && (password.length() >= 8 && password.length() <= 16)){
-           Boolean hasLowerCase = false, hasUpperCase = false, hasDigit = false;
+       if(!password.contains(" ") && (password.length() >= 8 && password.length() <= 16)){
+           boolean hasLowerCase = false, hasUpperCase = false, hasDigit = false, hasSpecial = false;
            for (int i = 0; i < password.length(); i++){
                char c = password.charAt(i);
-               if (Character.isLowerCase(c)) hasLowerCase = true;
-               else if (Character.isUpperCase(c)) hasUpperCase = true;
-               if (Character.isDigit(c)) hasDigit = true;
+               if (Character.isLetter(c)){
+                   if (Character.isLowerCase(c)) hasLowerCase = true;
+                   else if (Character.isUpperCase(c)) hasUpperCase = true;
+               }else if (Character.isDigit(c)) {
+                   hasDigit = true;
+               }else hasSpecial = true;
            }
-           return (hasDigit && hasLowerCase && hasUpperCase);
+           return (hasDigit && hasLowerCase && hasUpperCase && hasSpecial);
        }else return false;
     }
 
@@ -170,7 +173,7 @@ public class Project08 {
         String str2 = "abcd";
         String str3 = "abcd1234";
         String str4 = "Abcd123";
-        String str5 = "Abcd123!";
+        String str5 = "Abcd123$";
         System.out.println(validatePassword(str1));
         System.out.println(validatePassword(str2));
         System.out.println(validatePassword(str3));
