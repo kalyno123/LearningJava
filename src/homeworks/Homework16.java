@@ -61,14 +61,12 @@ public class Homework16 {
     */
         public static ArrayList<Integer> removeDuplicateNumbers(ArrayList<Integer> n){
             ArrayList<Integer> nums = new ArrayList<>();
-            for (int i = 0; i < n.size(); i++){
-                for (int j = i + 1; j < n.size(); j++){
-                    if (!(n.get(i).equals(n.get(j)))) nums.add(n.get(i));
+            for (Integer element1 : n){
+                for (Integer element2 : n){
+                    if (!(element1.equals(element2))) nums.add(element1);
                 }
-
             }
             return nums;
-
         }
 
 
@@ -80,6 +78,15 @@ public class Homework16 {
     NOTE: Make your code dynamic that works for any given ArrayList of String.
     NOTE: Be careful about lowercase and uppercase, this method is case-sensitive.
     */
+        public static ArrayList<String> removeDuplicateElements(ArrayList<String> s){
+            ArrayList<String> words = new ArrayList<>();
+            for (String element1 : s){
+                for (String element2 : s){
+                    if (!(element1.equals(element2))) words.add(element1);
+                }
+            }
+            return words;
+        }
 
     /* TASK 6: Write a method removeExtraSpaces() that takes a String as an argument, and returns a String with removed extra spaces.
     Test data 1:                                                        Test data 2:
@@ -121,12 +128,14 @@ public class Homework16 {
         System.out.println("\n-----TASK 1------\n");
         String str1 = "      Java is fun       ";
         String str2 = "Selenium is the most common UI automation tool.   ";
-        System.out.println(countWords(str1));
+        System.out.println(countWords(str1)); // 3
+        System.out.println(countWords(str2)); // 8
 
         System.out.println("\n-----TASK 2------\n");
         String str3 = "TechGlobal is a QA bootcamp";
         String str4 = "QA stands for Quality Assurance";
-        System.out.println(countA(str3));
+        System.out.println(countA(str3)); // 4
+        System.out.println(countA(str4)); // 5
 
         System.out.println("\n-----TASK 3------\n");
         ArrayList<Integer> nums1 = new ArrayList<>();
@@ -136,6 +145,7 @@ public class Homework16 {
         nums1.add(34);
         nums1.add(5);
         nums1.add(67);
+        System.out.println(countPos(nums1)); // 3
 
         ArrayList<Integer> nums2 = new ArrayList<>();
         nums2.add(-23);
@@ -145,19 +155,49 @@ public class Homework16 {
         nums2.add(5);
         nums2.add(90);
         nums2.add(123);
+        System.out.println(countPos(nums2)); // 4
 
-        System.out.println(countPos(nums1));
+        System.out.println("\n-----TASK 4------\n");
+        ArrayList<Integer> nums3 = new ArrayList<>();
+        nums3.add(10);
+        nums3.add(20);
+        nums3.add(35);
+        nums3.add(20);
+        nums3.add(35);
+        nums3.add(60);
+        nums3.add(70);
+        nums3.add(60);
+        System.out.println(removeDuplicateNumbers(nums3)); // [10, 20, 35, 60, 70]
 
+        ArrayList<Integer> nums4 = new ArrayList<>();
+        nums4.add(1);
+        nums4.add(2);
+        nums4.add(5);
+        nums4.add(2);
+        nums4.add(3);
+        System.out.println(removeDuplicateNumbers(nums4)); // [1, 2, 5, 3]
 
-        ArrayList<Integer> nums5 = new ArrayList<>();
-        nums5.add(10);
-        nums5.add(20);
-        nums5.add(35);
-        nums5.add(20);
-        nums5.add(35);
-        nums5.add(60);
-        nums5.add(70);
-        nums5.add(60);
+        System.out.println("\n-----TASK 5------\n");
+        ArrayList<String> t5 = new ArrayList<>();
+        t5.add("java");
+        t5.add("C#");
+        t5.add("ruby");
+        t5.add("JAVA");
+        t5.add("ruby");
+        t5.add("C#");
+        t5.add("C++");
+        System.out.println(removeDuplicateElements(t5));
+
+        ArrayList<String> task5 = new ArrayList<>();
+        task5.add("abc");
+        task5.add("xyz");
+        task5.add("123");
+        task5.add("ab");
+        task5.add("abc");
+        task5.add("ABC");
+        System.out.println(removeDuplicateElements(task5));
+
+        System.out.println("\n-----TASK 6------\n");
 
 
 

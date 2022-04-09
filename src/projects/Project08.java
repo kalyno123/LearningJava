@@ -82,11 +82,11 @@ public class Project08 {
     Expected output 5:
     true
     */
-    /*public static boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
         // PATTERN FORMAT: at least 1 digit, 1 uppercase, 1 lowercase, 1 special char, NO spaces
-        return password.matches("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z](?=.*[idk how to incorporate the special chars])");
-    }*/
-
+        return password.matches("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$&()\\-'.+,/\"*](?=\\S+$).{8,16})");
+    }
+    /* MY SOLUTION W/O USING REGEX:
     public static boolean validatePassword(String password) {
        if(!password.contains(" ") && (password.length() >= 8 && password.length() <= 16)){
            boolean hasLowerCase = false, hasUpperCase = false, hasDigit = false, hasSpecial = false;
@@ -102,6 +102,7 @@ public class Project08 {
            return (hasDigit && hasLowerCase && hasUpperCase && hasSpecial);
        }else return false;
     }
+    */
 
 
     /* TASK-4 - validateEmailAddress() method
@@ -173,7 +174,7 @@ public class Project08 {
         String str2 = "abcd";
         String str3 = "abcd1234";
         String str4 = "Abcd123";
-        String str5 = "Abcd123$";
+        String str5 = "Abcd123!";
         System.out.println(validatePassword(str1));
         System.out.println(validatePassword(str2));
         System.out.println(validatePassword(str3));
