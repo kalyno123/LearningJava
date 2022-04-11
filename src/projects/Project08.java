@@ -40,6 +40,14 @@ public class Project08 {
         return posList;
     }
 
+    /* DENIZ'S SOLUTION:
+    public static ArrayList<Integer> removeNegatives(ArrayList<Integer> numbers) {
+
+        numbers.removeIf(number -> number < 0);
+        System.out.println(numbers);
+    }
+    */
+
     /* DATA'S SOLUTION:
     public static ArrayList<Integer> removeNegative(ArrayList<Integer> numbers) {
         Iterator<Integer> iterator = numbers.iterator(); // put all elements in a queue

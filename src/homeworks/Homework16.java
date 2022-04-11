@@ -1,6 +1,7 @@
 package homeworks;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Homework16 {
 
@@ -16,6 +17,25 @@ public class Homework16 {
         public static int countWords(String str){
              return str.trim().split(" ").length;
         }
+
+        /*ANOTHER WAY TO SOLVE W/O SPILT();
+        public static int countWords(String str) {
+            int countSpace = 1;
+            String str1 = str.trim();
+            if (!(str1.contains(" "))) {
+                System.out.println("This sentence does not have multiple words.");
+            } else {
+                if (str1.contains(" ")) {
+                    for (int i = 0; i < str1.length(); i++) {
+                        if (Character.isWhitespace(str1.charAt(i))) { // checking if 'i' is a space
+                            countSpace++;
+                        }
+                    }
+                }
+            } return countSpace;
+        }
+        */
+
 
 
     /* TASK 2: Write a method countA() that takes a String as an argument, and returns how many A or a there are in the given String.
@@ -61,10 +81,8 @@ public class Homework16 {
     */
         public static ArrayList<Integer> removeDuplicateNumbers(ArrayList<Integer> n){
             ArrayList<Integer> nums = new ArrayList<>();
-            for (Integer element1 : n){
-                for (Integer element2 : n){
-                    if (!(element1.equals(element2))) nums.add(element1);
-                }
+            for (Integer element : n){
+                    if (!(nums.contains(element))) nums.add(element);
             }
             return nums;
         }
@@ -80,13 +98,12 @@ public class Homework16 {
     */
         public static ArrayList<String> removeDuplicateElements(ArrayList<String> s){
             ArrayList<String> words = new ArrayList<>();
-            for (String element1 : s){
-                for (String element2 : s){
-                    if (!(element1.equals(element2))) words.add(element1);
-                }
+            for (String element : s){
+                if(!(words.contains(element))) words.add(element);
             }
             return words;
         }
+
 
     /* TASK 6: Write a method removeExtraSpaces() that takes a String as an argument, and returns a String with removed extra spaces.
     Test data 1:                                                        Test data 2:
@@ -97,6 +114,21 @@ public class Homework16 {
     NOTE: Be careful about empty String.
     NOTE: Be careful about before and after white spaces.
     */
+        public static String removeExtraSpaces(String str){
+            String str1 = str.trim();
+            String[] str1Split = str1.split(" ");
+            StringBuilder strContainer = new StringBuilder();
+
+            if (!(str1.contains(" "))) {
+                System.out.println("This sentence does not have multiple words.");
+            } else {
+                for (String element : str1Split){
+                  if(!(element.contains(" "))) strContainer.append(element);
+                }
+            }
+            return strContainer.toString();
+        }
+
 
     /* TASK 7: Write a method add() that takes 2 int[] arrays as arguments and returns a new array with sum of given arrays elements.
     Test data 1:                                            Test data 2:
@@ -108,6 +140,21 @@ public class Homework16 {
     NOTE: You will assume that length of arrays are always more than zero
     NOTE: Be careful about arrays length, if they were equal, it would be an easy task, but they can be different as given in the example above.
     */
+        public static int[] add(int[] a, int[] b) {
+            //int maxLength = Math.max(a.length, b.length); --> i don't need to declare and assign since only using once
+            int[] arraySum = new int[Math.max(a.length, b.length)];
+
+            for (int i = 0; i < arraySum.length; i++) {
+                if (a.length > i) {
+                    arraySum[i] += a[i];
+                }
+                if (b.length > i) {
+                    arraySum[i] += b[i];
+                }
+            }
+            return arraySum;
+        }
+
 
     /* TASK 8: Write a method findClosestTo10() that takes an int[] array as an argument, and returns the closest element to 10 from given array.
     Test data 1:                                            Test data 2:
@@ -117,9 +164,41 @@ public class Homework16 {
     NOTE: You will assume that length of array is always more than zero.
     NOTE: Make your code dynamic that works for any given int[] array.
     NOTE: Be careful about element to be 10 (ignore it).
-    NOTE: Be careful about 2 numbers to be closest ( 8 and 12) in this case return smallest which is 8.
+    NOTE: Be careful about 2 numbers to be closest (8 and 12) in this case return smallest which is 8.
     */
+        public static int findClosestTo10(int[] a){
+            int almost10Element = a[0];
+            int elementDifference = Math.abs(a[0] - 10);
 
+            for (int i = 1; i < a.length; i++) {
+                if (Math.abs(a[i] - 10) < elementDifference) {
+                    elementDifference = Math.abs(a[i] - 10);
+                    almost10Element = a[i];
+                } else if ((Math.abs(a[i] - 10)) == elementDifference) {
+                    if (almost10Element > a[i]) {
+                        almost10Element = a[i];
+                    }
+                }
+            }
+            return almost10Element;
+            /*
+            int difference = 0;
+            int index = 0;
+            for (int element : a){
+                if (Math.abs(a[element] - 10) < difference)
+                    index = a[element];
+                difference = Math.abs(a[element] - 10);
+            }
+            return index;
+
+            Arrays.sort(a);
+            int element = 0;
+            for (int i = a.length; i > 0; i--)
+            if (a[i] != 10 && a[i] < 10){
+                element = a[i];
+            }
+            return element; */
+        }
 
 
 
@@ -186,7 +265,7 @@ public class Homework16 {
         t5.add("ruby");
         t5.add("C#");
         t5.add("C++");
-        System.out.println(removeDuplicateElements(t5));
+        System.out.println(removeDuplicateElements(t5)); // ["java", "C#", "ruby", "JAVA",  "C++"]
 
         ArrayList<String> task5 = new ArrayList<>();
         task5.add("abc");
@@ -195,10 +274,28 @@ public class Homework16 {
         task5.add("ab");
         task5.add("abc");
         task5.add("ABC");
-        System.out.println(removeDuplicateElements(task5));
+        System.out.println(removeDuplicateElements(task5)); // ["abc", "xyz", "123", "ab", "ABC"]
 
         System.out.println("\n-----TASK 6------\n");
+        String str5 = "   I   am      learning     Java      ";
+        String str6 = "Java  is fun    ";
+        System.out.println(removeExtraSpaces(str5)); // I am learning Java
+        System.out.println(removeExtraSpaces(str6)); // Java is fun
 
+        System.out.println("\n-----TASK 7------\n");
+        int[] a = {3, 0, 0, 7, 5, 10};
+        int[] b = {6, 3, 2};
+        System.out.println(Arrays.toString(add(a, b))); // [9, 3, 2, 7, 5, 10]
+
+        int[] c = {6, 8, 3, 0, 0, 7, 5, 10, 34};
+        int[] d = {10, 3, 6, 3, 2};
+        System.out.println(Arrays.toString(add(c, d))); // [16, 11, 9, 3, 2, 7, 5, 10, 34]
+
+        System.out.println("\n-----TASK 8------\n");
+        int[] e = {10, -13, 5, 70, 15, 57};
+        System.out.println(findClosestTo10(e));
+        int[] f = {10, -13, 8, 12, 15, -20};
+        System.out.println(findClosestTo10(f));
 
 
 
