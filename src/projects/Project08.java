@@ -23,6 +23,8 @@ public class Project08 {
         return countMultiWordsElements;
     }
 
+    //(int) newWords.stream().filter(word -> word.trim().contains(" ")).count();
+
 
     /* TASK-2 - removeNegatives() method
     Write a method that takes an ArrayList<Integer> numbers as an argument and removes all negative numbers from the given list if there are any.
@@ -90,10 +92,12 @@ public class Project08 {
     Expected output 5:
     true
     */
+
     public static boolean validatePassword(String password) {
         // PATTERN FORMAT: at least 1 digit, 1 uppercase, 1 lowercase, 1 special char, NO spaces
-        return password.matches("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$&()\\-'.+,/\"*](?=\\S+$).{8,16})");
+        return password.matches("(?=.*[@!#$%]+)(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*\\d+).{8,22}");
     }
+
     /* MY SOLUTION W/O USING REGEX:
     public static boolean validatePassword(String password) {
        if(!password.contains(" ") && (password.length() >= 8 && password.length() <= 16)){

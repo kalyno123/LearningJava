@@ -129,6 +129,25 @@ public class Homework16 {
             return strContainer.toString();
         }
 
+        /* JOHNATHAN'S SOLUTION:
+        public static String removeExtraSpaces(String sentence) {
+            sentence = sentence.trim();
+            String answer = "";
+            boolean spaceFound = false;
+            for (int i = 0; i < sentence.length(); i++) {
+                if (Character.isSpaceChar(sentence.charAt(i)) && !spaceFound) {
+                    answer += " ";
+                    spaceFound = true;
+                }
+                if (Character.isLetter(sentence.charAt(i))) {
+                    spaceFound = false;
+                    answer += sentence.charAt(i);
+                }
+            }
+            return answer;
+        }
+        */
+
 
     /* TASK 7: Write a method add() that takes 2 int[] arrays as arguments and returns a new array with sum of given arrays elements.
     Test data 1:                                            Test data 2:
@@ -293,9 +312,9 @@ public class Homework16 {
 
         System.out.println("\n-----TASK 8------\n");
         int[] e = {10, -13, 5, 70, 15, 57};
-        System.out.println(findClosestTo10(e));
+        System.out.println(findClosestTo10(e)); // 5
         int[] f = {10, -13, 8, 12, 15, -20};
-        System.out.println(findClosestTo10(f));
+        System.out.println(findClosestTo10(f)); // 8
 
 
 
