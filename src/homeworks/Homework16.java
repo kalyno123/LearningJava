@@ -115,15 +115,14 @@ public class Homework16 {
     NOTE: Be careful about before and after white spaces.
     */
         public static String removeExtraSpaces(String str){
-            String str1 = str.trim();
-            String[] str1Split = str1.split(" ");
+            String[] str1 = str.trim().split(" ");
             StringBuilder strContainer = new StringBuilder();
 
-            if (!(str1.contains(" "))) {
+            if (!(str.contains(" "))) {
                 System.out.println("This sentence does not have multiple words.");
             } else {
-                for (String element : str1Split){
-                  if(!(element.contains(" "))) strContainer.append(element);
+                for (String element : str1){
+                  if(!(element.isEmpty())) strContainer.append(element + " ");
                 }
             }
             return strContainer.toString();
@@ -135,13 +134,13 @@ public class Homework16 {
             String answer = "";
             boolean spaceFound = false;
             for (int i = 0; i < sentence.length(); i++) {
-                if (Character.isSpaceChar(sentence.charAt(i)) && !spaceFound) {
-                    answer += " ";
-                    spaceFound = true;
-                }
                 if (Character.isLetter(sentence.charAt(i))) {
                     spaceFound = false;
                     answer += sentence.charAt(i);
+                }
+                if (Character.isSpaceChar(sentence.charAt(i)) && !spaceFound) {
+                    answer += " ";
+                    spaceFound = true;
                 }
             }
             return answer;
@@ -185,12 +184,12 @@ public class Homework16 {
     NOTE: Be careful about element to be 10 (ignore it).
     NOTE: Be careful about 2 numbers to be closest (8 and 12) in this case return smallest which is 8.
     */
-        public static int findClosestTo10(int[] a){
+        public static int findClosestTo10(int[] a) {
             int almost10Element = a[0];
             int elementDifference = Math.abs(a[0] - 10);
 
             for (int i = 1; i < a.length; i++) {
-                if (Math.abs(a[i] - 10) < elementDifference) {
+                if (a[i] != 10 && Math.abs(a[i] - 10) < elementDifference) {
                     elementDifference = Math.abs(a[i] - 10);
                     almost10Element = a[i];
                 } else if ((Math.abs(a[i] - 10)) == elementDifference) {
@@ -200,24 +199,23 @@ public class Homework16 {
                 }
             }
             return almost10Element;
-            /*
-            int difference = 0;
-            int index = 0;
-            for (int element : a){
-                if (Math.abs(a[element] - 10) < difference)
-                    index = a[element];
-                difference = Math.abs(a[element] - 10);
-            }
-            return index;
-
-            Arrays.sort(a);
-            int element = 0;
-            for (int i = a.length; i > 0; i--)
-            if (a[i] != 10 && a[i] < 10){
-                element = a[i];
-            }
-            return element; */
         }
+
+        /* NATALLIA'S SOLUTION:
+        public static int findClosestTo10(int[] arr) {
+            int index = 0;
+            int distance = Math.abs(arr[0] - index);
+
+            for (int i = 0; i < arr.length; i++) {
+                int dist = Math.abs(arr[i] - index);
+                if (dist < distance) {
+                    index = i;
+                    distance = dist;
+                }
+            }
+                return arr[index];
+        }
+        */
 
 
 

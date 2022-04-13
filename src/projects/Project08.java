@@ -15,6 +15,7 @@ public class Project08 {
     Expected output:
     2
     */
+    /*
     public static int countMultipleWords(String[] a) {
         int countMultiWordsElements = 0;
         for (String element : a) {
@@ -22,8 +23,13 @@ public class Project08 {
         }
         return countMultiWordsElements;
     }
+    */
 
-    //(int) newWords.stream().filter(word -> word.trim().contains(" ")).count();
+    // JOHNATHAN'S SOLUTION:
+    public static int countMultipleWords(String[] a) {
+        ArrayList<String> newWords = new ArrayList<>(Arrays.asList(a));
+        return (int) newWords.stream().filter(word -> word.trim().contains(" ")).count();
+    }
 
 
     /* TASK-2 - removeNegatives() method
@@ -44,7 +50,6 @@ public class Project08 {
 
     /* DENIZ'S SOLUTION:
     public static ArrayList<Integer> removeNegatives(ArrayList<Integer> numbers) {
-
         numbers.removeIf(number -> number < 0);
         System.out.println(numbers);
     }
@@ -116,6 +121,37 @@ public class Project08 {
     }
     */
 
+    /* SALIH'S SOLUTION:
+    public static boolean validatePassword(String password) {
+        int digit = 0, upper = 0, lower = 0, special = 0;
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isDigit(password.charAt(i))) digit++;
+            else if (Character.isUpperCase(password.charAt(i))) upper++;
+            else if (Character.isLowerCase(password.charAt(i))) lower++;
+            else special++;
+        }
+        return (password.length() >= 0 && password.length() <= 16)
+                && (digit > 0 && upper > 0 && lower > 0 && special > 0)
+                && !(password.contains(" "));
+    }
+    */
+
+    /* AKIN'S SOLUTION:
+    public static boolean validatePassword(String str) {
+        if (str.contains(" ") || str.length() < 8 || str.length() > 16) return false;
+        boolean uppercase = false;
+        boolean lowercase = false;
+        boolean digit = false;
+        boolean special = false;
+        for (char c : str.toCharArray()) {
+            if (Character.isUpperCase(c)) uppercase = true;
+            else if (Character.isLowerCase(c)) lowercase = true;
+            else if (Character.isDigit(c)) digit = true;
+            else special = true;
+        }
+        return uppercase && lowercase && digit && special;
+    }*/
+
 
     /* TASK-4 - validateEmailAddress() method
     Write a method that takes a “String email” as an argument and checks if the given email is valid or not.
@@ -145,23 +181,49 @@ public class Project08 {
     Expected output 5:
     true
     */
+
     public static boolean validateEmailAddress(String email) {
         // PATTERN FORMAT: <2+chars>@<2+chars>.<2+chars>
         return email.matches("([a-zA-z]{2,})@([a-zA-z]{2,}).([a-zA-z]{2,})");
     }
 
     /* MELDA'S SOLUTION:
-    public static boolean validEMail(String mail) {
-        if (mail.contains(" ")) return false;
-        if (mail.contains("@") && mail.contains(".")) {
-            String[] split1 = mail.split("@");
-            String[] split2 = split1[1].split("\\.");//in java "."needs to use together "\\."
+    public static boolean validateEmailAddress(String email) {
+        if (email.contains(" ")) return false;
+        if (email.contains("@") && email.contains(".")) {
+            String[] split1 = email.split("@");
+            String[] split2 = split1[1].split("\\."); // in java . needs to be escaped --> \\.
             return split1[0].length() > 2 && split2[0].length() > 2 && split2[1].length() > 2;
         }
         return false;
     }
     */
 
+    /* AKIN'S SOLUTION:
+    public static boolean validateEmail(String str){
+        if (str.contains(" ") || !str.contains("@") || !str.contains(".") ||
+                (str.indexOf("@") != str.lastIndexOf("@")) || str.length() < 8) return false;
+
+        return str.substring(0, str.indexOf("@")).length() >= 2 &&
+                str.substring(str.indexOf("@") + 1, str.indexOf(".")).length() >= 2 &&
+                str.substring(str.lastIndexOf("@")).length() >= 2;
+    }
+    // str.length()-1 != str.removeAll("@").length(); -- if the expression is equal this mean there's only 1 @ but if it's not
+    // equals then this means there was more than one @ ex: str.length-1 != str.length-2 --> there were 2 @.
+    */
+
+    /* SALIH'S SOLUTION:
+    public static boolean validateEmailAddress(String email) {
+        // +validation of . --> after the @ sign there shouldn't be more than 1 .
+        // +validation of @ --> only 1 @ AND and email contains
+        // +validation of first part --> (0, index of @ ) >= 2
+        // validation of second part --> (index of @ + 1, last index of . ) >= 2
+        // validation of first part --> (last index of . + 1) >= 2
+        int digit = 0, iAt = email.indexOf("@"), lAt = email.lastIndexOf("@"), lDot = email.lastIndexOf(".");
+        for (int i = lAt + 1; i < email.length(); i++) if (email.charAt(i) == '.') digit++;
+        return digit == 1 && (iAt == lAt && email.contains("@")) && lAt >= 2 && lDot - lAt >= 3 && email.length() - lDot >= 3;
+    }
+    */
 
 
     public static void main(String[] args) {
