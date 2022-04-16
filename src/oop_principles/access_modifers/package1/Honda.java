@@ -1,4 +1,4 @@
-package acessModifiers.package1;
+package oop_principles.access_modifers.package1;
 
 public class Honda {
 

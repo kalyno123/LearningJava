@@ -1,7 +1,7 @@
-package acessModifiers.package2;
+package oop_principles.access_modifers.package2;
 
-import acessModifiers.package1.Honda;
-//import acessModifiers.package1.Tesla;
+import oop_principles.access_modifers.package1.Honda;
+//import oop_principles.access_modifers.package1.Tesla;
 
 public class TestPackage2 {
     public static void main(String[] args) {
