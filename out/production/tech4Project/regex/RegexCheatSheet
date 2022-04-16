@@ -13,9 +13,8 @@ PATTERN SYMBOLS:
 1[0-9] —> rep.numbers 10-19 .. use 2[0-9] to rep. numbers 20-29 and so on. Can also be 1[012] to rep. 10, 11, 12 if you only want the pattern to be up to certain values. Can also be [12][0-9] to rep 10-19 20-29 ..
 Its helpful to know I=that its read as [12][012]: 1 or 2 followed by 0 or 1 or 2.
 [12][0-9]: 1 or 2 followed by 0-9
-. —> rep. at least 1 ;; can also mean match any ->ex: 123.matches(“\d\d\d.”}
 . —> rep. any char
-*—> rep. zero or more
+* —> rep. zero or more
 ^ —> means must starts with ----> can only be use with finding something at the start of the entire String
 $ —> means must ends with ----> can only be use with finding something at the end of the entire String
 | —> rep. OR
