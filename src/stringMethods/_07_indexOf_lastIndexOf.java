@@ -22,5 +22,14 @@ public class _07_indexOf_lastIndexOf {
         System.out.println(sentence.indexOf("Florida")); // -1
         // NOTE: the method will return -1 if given char or string is not found in the given string
 
+
+
+
+
+
+
+
+
+
     }
 }

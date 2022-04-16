@@ -15,9 +15,22 @@ public class UnderstandingStackAndHeap {
         System.out.println(dog2); // so, it is stored in the Stack space. While Dog is an Object so, it is stored in the Heap space.
         System.out.println(dog3);
 
+        String s1 = "Data";
+        String s2 = "Data";
 
+        System.out.println(s1.equals(s2));
+        System.out.println(s1 ==s2);
 
+        String s3 = new String("Data");
+        String s4 = new String("Data");
 
+        System.out.println(s1.equals(s2));
+        System.out.println(s1 ==s2);
+
+        s3 = s4;
+
+        System.out.println(s1.equals(s2));
+        System.out.println(s1 ==s2);
 
 
 
