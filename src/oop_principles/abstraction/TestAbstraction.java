@@ -42,6 +42,7 @@ public class TestAbstraction {
         }
         System.out.println("The most expensive phone is = " + mostExpensive.getClass().getSimpleName());
         System.out.println(countConvert);
+        System.out.println("The color of the most expensive phone is = " + mostExpensive.color);
 
         //phones.forEach(element -> System.out.println(element));
         //System.out.println(phones.stream().filter(Phone::isConvertible).count()); // CAN ALSO BE: phones.stream().filter(Phone::isConvertible).count()
