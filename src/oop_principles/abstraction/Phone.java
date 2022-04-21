@@ -2,6 +2,10 @@ package oop_principles.abstraction;
 
 public abstract class Phone {
 
+    static {
+
+    }
+
     //DEFAULT CONSTRUCTOR
     public Phone() {
 
@@ -39,4 +43,7 @@ public abstract class Phone {
                 ", price=" + price +
                 '}';
     }
+
+    // method from interface
+    public abstract void takesPhoto();
 }

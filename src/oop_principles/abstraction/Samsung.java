@@ -1,6 +1,6 @@
 package oop_principles.abstraction;
 
-public class Samsung extends Phone{
+public class Samsung extends Phone implements Camera, Bluetooth{
 
     public Samsung() {
 
@@ -12,8 +12,10 @@ public class Samsung extends Phone{
         // super(); variables are referencing the instance variables in the abstract class(aka samsung's parent)
     }
 
+    // instance variable
     public static final String OS = "Android";
 
+    // method from abstract class
     @Override
     public void call() {
         System.out.println("Samsung calls");
@@ -33,6 +35,20 @@ public class Samsung extends Phone{
     public boolean isConvertible() {
         return true;
     }
+
+    // method from interface
+    @Override
+    public void takesPhoto() {
+        System.out.println("Samsung takes photo");
+    }
+
+    @Override
+    public void connectsBluetooth() {
+        System.out.println("Samsung connects to bluetooth");
+    }
+
+
+
 
 
 }

@@ -12,8 +12,10 @@ public class Nokia extends Phone{
         // super(); variables are referencing the instance variables in the abstract class(aka nokia's parent)
     }
 
+    // instance variable
     public static final String OS = "Android";
 
+    // method from abstract class
     @Override
     public void call() {
         System.out.println("Nokia calls");
@@ -33,4 +35,17 @@ public class Nokia extends Phone{
     public boolean isConvertible() {
         return false;
     }
+
+    // method from interface
+    @Override
+    public void takesPhoto() {
+        System.out.println("Samsung takes photo");
+    }
+
+
+
+
+
+
+
 }

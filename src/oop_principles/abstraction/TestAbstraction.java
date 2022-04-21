@@ -1,7 +1,5 @@
 package oop_principles.abstraction;
 
-import oop_principles.inheritance.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 
