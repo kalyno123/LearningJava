@@ -33,7 +33,6 @@ public class Project06 {
             System.out.println("This sentence does not have multiple words.");
         } else { // if it goes here then the String does have multiple words
             if (sentence.contains(" ")) {// checking if sentence contains more than 1 word
-                //if (sentence.charAt(i).equals(" ")) -- my initial thought but got an error; please explain.
                 for (int i = 0; i < sentence.length(); i++) {
                     if (Character.isWhitespace(sentence.charAt(i))) { // checking if 'i' is a space
                         spaceCounter++;

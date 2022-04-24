@@ -193,6 +193,8 @@ public class Homework15 {
         chars.add('G');
         System.out.println(chars);
 
+        //chars.forEach(element -> System.out.println(element)); --> CAN ALSO BE: chars.forEach(System.out::println);
+
         for (Character element : chars){ // should we do unboxing(char) or better to use Wrapper?
             System.out.println(element);
         }
@@ -309,9 +311,6 @@ public class Homework15 {
         System.out.println("Elements that are even and greater than 15 = " + countEvenGreaterThan15);
         System.out.println("Elements that are odd and less than 20 = " + countOddLessThan20);
         System.out.println("Elements that are less than 15 or greater than 50 = " + countLess15OrGreater20);
-
-
-
 
 
 

@@ -1,0 +1,70 @@
+REGEX CHEAT SHEET
+
+PATTERN SYMBOLS:
+\\d —> rep. digit — one d rep. one digit
+\\s —> rep. space — one s rep. one space
+{#} —> how many char is required; ex: “\\d{5}” —> need 5 digits = 60805
+{#,} —> how many char is required or more; the common means “or more” ex: \\d{3,} — this means 3 or more digits
+{#,#} —> how many char in total is required between given values ex: {8,20} — this means need minimum 8 chars , maximum 20 chars
++ —> rep. one or more ex: “\\d+” —> means id test data has 1 or more digit then ok
+[a-zA-z]
+[a-zA-Z] —> rep. lowercase+uppercase letters a-z (not case sensitive)
+[0-9] —> rep. numbers. Can be set as 1-9, 5-8, 2-6 etc …
+1[0-9] —> rep.numbers 10-19 .. use 2[0-9] to rep. numbers 20-29 and so on. Can also be 1[012] to rep. 10, 11, 12 if you only want the pattern to be up to certain values. Can also be [12][0-9] to rep 10-19 20-29 ..
+Its helpful to know I=that its read as [12][012]: 1 or 2 followed by 0 or 1 or 2.
+[12][0-9]: 1 or 2 followed by 0-9
+. —> rep. any char
+* —> rep. zero or more
+^ —> means must starts with ----> can only be use with finding something at the start of the entire String
+$ —> means must ends with ----> can only be use with finding something at the end of the entire String
+| —> rep. OR
+?= —> means anywhere in given testData
+? —> means occurs once or none
+
+If testData should contain a specific char then hard code it into the regex parameter
+ex: validate phone number — “891-234-6587”.matches(“[1-9]\\d{2}-\\d{2}-\\d{3}”
+So this is saying first digit should be [1-9] (US phone numbers can’t start with 0)
+\\d{2} is saying the follow match has to be a 2 additional digit (between 0-9)
+Hard coded all the dashes -
+After the dash should be 3 more digits and then another set of 4 digits.
+
+If testData containing a specific char is optional for the statement to match or not the can use ?
+ex: validate phone number — “891-234-6587”.matches(“[1-9]\\d{2}-?\\d{3}-?\\d{4}”
+
+[a-zA-z]{3} —> this is a regex for matching 3 letters
+
+“2008-11-20”.matches(“\\d{4})-(0?[1-9]|[1][012])-(0?[1-9]|[12][0-9]|3[01])”)
+—> validating date of birth in year-month-day format
+
+^[a-zA-Z_$][a-zA-Z_$0-9]* —> checking if variableName matched Java’s naming convention. Here regex is saying variables must start with ^ lowercase, uppercase, underscore or money sign … followed by lowercase, uppercase, underscore, money sign or digits 0-9 .. * can be zero or more so this mean the followed by requirements can be as many as zero or more.
+
+
+
+.       - Any Character Except New Line
+\d      - Digit (0-9)
+\D      - Not a Digit (0-9)
+\w      - Word Character (a-z, A-Z, 0-9, _)
+\W      - Not a Word Character
+\s      - Whitespace (space, tab, newline)
+\S      - Not Whitespace (space, tab, newline)
+
+\b      - Word Boundary
+\B      - Not a Word Boundary
+^       - Beginning of a String
+$       - End of a String
+
+[]      - Matches Characters in brackets
+[^ ]    - Matches Characters NOT in brackets
+|       - Either Or
+( )     - Group
+
+Quantifiers:
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+
+#### Sample Regexs ####
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
