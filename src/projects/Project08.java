@@ -208,8 +208,8 @@ public class Project08 {
                 str.substring(str.indexOf("@") + 1, str.indexOf(".")).length() >= 2 &&
                 str.substring(str.lastIndexOf("@")).length() >= 2;
     }
-    // str.length()-1 != str.removeAll("@").length(); -- if the expression is equal this mean there's only 1 @ but if it's not
-    // equals then this means there was more than one @ ex: str.length-1 != str.length-2 --> there were 2 @.
+    // str.length()-1 != str.removeAll("@").length(); -- if the expression is equal this means there's only 1 @ but if it's not
+    // equal then this means there was more than one @ ex: str.length-1 != str.length-2 --> true = there were 2 @.
     */
 
     /* SALIH'S SOLUTION:

@@ -50,7 +50,8 @@ public class Homework16 {
         public static int countA(String str){
             int countAa = 0;
             for (int i = 0; i < str.length(); i++){
-                if (str.toLowerCase().charAt(i) == 'a') countAa++;
+                //if (str.toLowerCase().charAt(i) == 'a') countAa++;
+                if (str.charAt(i) == 'A' || str.charAt(i) == 'a') countAa++;
             }
             return countAa;
         }
