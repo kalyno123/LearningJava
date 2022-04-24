@@ -83,7 +83,7 @@ public class Homework16 {
         public static ArrayList<Integer> removeDuplicateNumbers(ArrayList<Integer> n){
             ArrayList<Integer> nums = new ArrayList<>();
             for (Integer element : n){
-                    if (!(nums.contains(element))) nums.add(element);
+                    if (!nums.contains(element)) nums.add(element);
             }
             return nums;
         }

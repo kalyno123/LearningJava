@@ -48,7 +48,7 @@ public class PolymorphicCollections {
 
         // until its ran ... compiler associates the Object Dog with parent Animal Class
         // HOWEVER, ONCE IT IS EXECUTED THE RUNTIME GRABS THE OBJECT BEING REFERENCE FROM THE HEAP AND WILL RETURN THE PROPER ASSOCIATED VALUE
-        // HINT: ignore the right side = (compiler looks right) -- focus on left side of = (runtime looks left)
+        // HINT: DYNAMIC POLYMORPHISM ignores the left side => (compiler looks left) -- focuses on right side of => (runtime looks right)
 
         System.out.println("\n-----Dog and Cat Object in Animal Array------\n");
         Animal[] animals = {cat1, dog1, animal1, cat2, dog2};
