@@ -1,9 +1,6 @@
 package collectionsFramework;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Map_Methods {
     public static void main(String[] args) {
@@ -39,7 +36,6 @@ public class Map_Methods {
 
         favorites.remove("Day");
         favorites.remove("Pet", "Turtle");
-
         System.out.println(favorites);
 
         favorites.replace("Car", "Tesla");
