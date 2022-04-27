@@ -46,4 +46,7 @@ public abstract class Phone {
 
     // method from interface
     public abstract void takesPhoto();
+
+
+
 }

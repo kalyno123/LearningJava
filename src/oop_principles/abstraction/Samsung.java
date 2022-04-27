@@ -8,8 +8,9 @@ public class Samsung extends Phone implements Camera, Bluetooth{
 
     public Samsung(String brand, String color, int storage, double price) {
         super(brand, color, storage, price);
+        //super.brand = brand;
         // super(); MUST be the first statement of the subclass constructor
-        // super(); variables are referencing the instance variables in the abstract class(aka samsung's parent)
+        // super(); variables are referencing the instance variables in the abstract class(aka samsung's parent aka Phone class)
     }
 
     // instance variable

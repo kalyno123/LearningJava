@@ -3,15 +3,15 @@ package regex;
 public class ReplaceAll_UsingRegex {
     public static void main(String[] args) {
 
-            //Removing vowels
+        //Removing vowels
             String str = "Hello World";
             System.out.println("Before: " + str);
 
-            str = str.replaceAll("[aeiouAEIOU]", "");
+        str = str.replaceAll("[aeiouAEIOU]", "");
             System.out.println("After: " + str);
-            //Removing digits
 
-            String str2 = "hello123world";
+        //Removing digits
+        String str2 = "hello123world";
             str2 = str2.replaceAll("[^0-9]","");
             System.out.println(str2);
 
@@ -19,8 +19,7 @@ public class ReplaceAll_UsingRegex {
         String str = “ abc 123 $#^ ”;
         Remove all special characters
         Expected output: abc123
-         */
-
+        */
             String str3 = " aAc 123 $#^%  )(! ";
             System.out.println(str3.replaceAll("[^a-zA-Z0-9]",""));
 
