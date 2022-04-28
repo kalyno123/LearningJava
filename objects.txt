@@ -1,0 +1,7 @@
+Computer
+Phone
+Table
+Chair
+Mouse
+Screen
+Remote
