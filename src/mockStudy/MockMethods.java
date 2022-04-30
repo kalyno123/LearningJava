@@ -1,6 +1,8 @@
-package mock2Study;
+package mockStudy;
 
-import utilities.CharacterHelper;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 public class MockMethods {
 
@@ -41,6 +43,45 @@ public class MockMethods {
             str1 += str.charAt(i);
         } return str1;
     }
+
+    //mock3 wb#27
+    public static int[] uniques(int[] n){
+        //int[] wb27 = {0, 5, 4, 0, 0}; // TEST DATA
+        //HashSet<Integer> a = new HashSet<>(); // container to hold uniques (non-dups)
+        TreeSet<Integer> a = new TreeSet<>(); // either or collection would work
+        for (int element : n) {
+            a.add(element);
+        }
+        int[] newArray = new int[a.size()];
+        for (int element : newArray){
+            newArray[element] = element;
+        }
+        return newArray;
+        // a.toArray() --> to convert set collection back to array
+        // Arrays.toString() --> to print the array w/o location
+    }
+
+    //mock3 wb#28
+    public static String removeDups(String[] s){
+        HashSet<String> a = new HashSet<>(); // container
+        for (String element : s){
+            a.add(element);
+        }
+        return Arrays.toString(a.toArray());
+    }
+
+    //mock3 wb#
+    public static int[] isFactorial(int[] arr){
+        for (int i = 0; i <arr.length ; i++){
+            int f = 1;
+            for (int j = arr[i]; j >= 2; j--){
+                f *= j;
+            } arr[i] = f;
+        } return arr;
+    }
+
+
+
 
 
 

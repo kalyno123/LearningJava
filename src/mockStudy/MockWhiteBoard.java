@@ -1,4 +1,7 @@
-package mock2Study;
+package mockStudy;
+
+import java.util.Arrays;
+import java.util.TreeSet;
 
 public class MockWhiteBoard {
     public static void main(String[] args) {
@@ -82,6 +85,63 @@ public class MockWhiteBoard {
             n2 = n3;
         }
         System.out.print(s.substring(0, s.length() - 3));
+
+
+        System.out.println("===\nmock3===");
+        int[] wb24 = {-3, 5, 4, 0, 11, 2};
+        int count = 0;
+        for (int e : wb24){
+            if (!(e < 0) && e % 2 != 0 || e == 2) count++;
+        }
+        System.out.println(count);
+
+        System.out.println("=====removedups=====");
+        int[] wb27 = {0, 5, 4, 0, 0}; // TEST DATA
+        //HashSet<Integer> a = new HashSet<>(); // container to hold uniques (non-dups)
+        TreeSet<Integer> a = new TreeSet<>(); // either or collection would work
+        for (int element : wb27){
+            a.add(element);
+        }
+        System.out.println(Arrays.toString(a.toArray()));
+        // a.toArray() --> to convert set collection back to array
+        // Arrays.toString() --> to print the array w/o location
+
+
+        System.out.println(Arrays.toString(MockMethods.uniques(wb27)));
+
+        String[] wb28 = {"foo", "bar", "foo", "123", "bar"};
+        System.out.println(MockMethods.removeDups(wb28));
+
+
+        //mock3 wb#29
+        String str1 = "civic", str2 = "hello";
+        //SOLUTION 1:
+        String reverse = "";
+        for (int i = str1.length()-1; i >= 0; i--){
+            reverse += str1.charAt(i);
+        }
+        System.out.println(reverse.equals(str1));
+
+        //SOLUTION 2:
+        System.out.println(new StringBuilder(str1).reverse().toString().equals(str1));
+
+        //SOLUTION 3:
+        if (str1.length() <= 1){// ex: str1 = 'a'
+            System.out.println(str1);
+        }else {
+            System.out.println((str1.substring(1) + str1.charAt(0)).equals(str1)); // ASK ANDREI
+        }
+
+        //PRIME NUMBER -- WRONG!
+        int[] n = {-3, 5, 4, 0, 11, 2, 1, 4, 13, 21, 15, 19};
+        int counter = 0;
+        for (int e : n){
+            if (!(e < 0) && e != 1 && e % 2 != 0 || e == 2) counter++;
+        }
+        System.out.println(counter);
+
+
+
 
 
 

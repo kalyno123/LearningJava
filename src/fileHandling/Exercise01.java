@@ -47,6 +47,9 @@ public class Exercise01 {
             catch(Exception e){
               e.printStackTrace();
             }
+            finally {
+                file.delete();
+            }
 
 
 

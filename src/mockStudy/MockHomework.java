@@ -1,6 +1,4 @@
-package mock2Study;
-
-import java.util.Scanner;
+package mockStudy;
 
 public class MockHomework {
     public static void main(String[] args) {
