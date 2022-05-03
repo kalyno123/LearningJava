@@ -87,7 +87,7 @@ public class MockWhiteBoard {
         System.out.print(s.substring(0, s.length() - 3));
 
 
-        System.out.println("===\nmock3===");
+        System.out.println("\n\n===mock3===");
         int[] wb24 = {-3, 5, 4, 0, 11, 2};
         int count = 0;
         for (int e : wb24){
@@ -95,7 +95,7 @@ public class MockWhiteBoard {
         }
         System.out.println(count);
 
-        System.out.println("=====removedups=====");
+        System.out.println("\n=====removedups wb27=====");
         int[] wb27 = {0, 5, 4, 0, 0}; // TEST DATA
         //HashSet<Integer> a = new HashSet<>(); // container to hold uniques (non-dups)
         TreeSet<Integer> a = new TreeSet<>(); // either or collection would work
@@ -106,13 +106,15 @@ public class MockWhiteBoard {
         // a.toArray() --> to convert set collection back to array
         // Arrays.toString() --> to print the array w/o location
 
-
+        System.out.println("\n===wb27===");
+        // using wb27 method
         System.out.println(Arrays.toString(MockMethods.uniques(wb27)));
 
+        System.out.println("\n===wb28===");
         String[] wb28 = {"foo", "bar", "foo", "123", "bar"};
         System.out.println(MockMethods.removeDups(wb28));
 
-
+        System.out.println("\n===wb29===");
         //mock3 wb#29
         String str1 = "civic", str2 = "hello";
         //SOLUTION 1:
@@ -132,18 +134,28 @@ public class MockWhiteBoard {
             System.out.println((str1.substring(1) + str1.charAt(0)).equals(str1)); // ASK ANDREI
         }
 
-        //PRIME NUMBER -- WRONG!
-        int[] n = {-3, 5, 4, 0, 11, 2, 1, 4, 13, 21, 15, 19};
-        int counter = 0;
-        for (int e : n){
-            if (!(e < 0) && e != 1 && e % 2 != 0 || e == 2) counter++;
+        System.out.println("\n===PRIME===");
+        //PRIME NUMBER:
+        //int[] n = {-3, 5, 4, 0, 11, 2, 1, 4, 13, 21, 15, 19, -1};
+        int[] n = {-3, 5, 4, 0, 11, 12, 3, 7, 13}; // 5
+        System.out.println(MockMethods.countPrime(n));
+
+        System.out.println("\n===factorial===");
+        int[] wb46 = {0, 5, 4, 1, 3, 2};
+        System.out.println(Arrays.toString(MockMethods.factorial(wb46)));
+
+        String mock3Bonus = au1b2; // 3
+        public static int nums(String word) {
+            int sum = 0;
+            for (int i = 0; i < word.length(); i++) {
+                if (Character.isDigit(word.charAt(i)) sum += Integer.parseInt(word.substring(i, i + 1));
+            }
+            return sum;
         }
-        System.out.println(counter);
 
-
-
-
-
+        if (Character.isDigit(word.charAt(i)) {
+            sum += Integer.parseInt(str.charAt(i));
+        }
 
 
 

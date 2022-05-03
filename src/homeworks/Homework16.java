@@ -118,15 +118,11 @@ public class Homework16 {
         public static String removeExtraSpaces(String str){
             String[] str1 = str.trim().split(" ");
             String strContainer = "";
-            System.out.println(Arrays.toString(str1));
-            if (!(str.contains(" "))) {
-                System.out.println("This sentence does not have multiple words.");
-            } else {
-                for (String element : str1){
-                  if(!(element.isEmpty())) strContainer += (element + " ");
-                }
+            //System.out.println(Arrays.toString(str1));
+            for (String element : str1){
+                if(!(element.isEmpty())) strContainer += (element + " ");
             }
-            return strContainer;
+            return strContainer.trim();
         }
 
         /* JOHNATHAN'S SOLUTION:

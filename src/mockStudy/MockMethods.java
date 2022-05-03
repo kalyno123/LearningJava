@@ -1,5 +1,6 @@
 package mockStudy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.TreeSet;
@@ -53,12 +54,24 @@ public class MockMethods {
             a.add(element);
         }
         int[] newArray = new int[a.size()];
-        for (int element : newArray){
-            newArray[element] = element;
+        int i = 0;
+        for (Integer element : a){
+            newArray[i++] = element;
         }
         return newArray;
-        // a.toArray() --> to convert set collection back to array
-        // Arrays.toString() --> to print the array w/o location
+    }
+
+    // another way to do wb27
+    public static int[] removeDuplicate(int[] arr){
+        ArrayList<Integer> uniques = new ArrayList<>();
+        for(int i: arr){
+            if(!uniques.contains(i)) uniques.add(i);
+        }
+        int[] newArr = new int[uniques.size()];
+        for(int i = 0; i < uniques.size(); i++){
+            newArr[i] = uniques.get(i);
+        }
+        return newArr;
     }
 
     //mock3 wb#28
@@ -70,8 +83,8 @@ public class MockMethods {
         return Arrays.toString(a.toArray());
     }
 
-    //mock3 wb#
-    public static int[] isFactorial(int[] arr){
+    //mock3 wb#46
+    public static int[] factorial(int[] arr){
         for (int i = 0; i <arr.length ; i++){
             int f = 1;
             for (int j = arr[i]; j >= 2; j--){
@@ -80,10 +93,44 @@ public class MockMethods {
         } return arr;
     }
 
+    // wb#
+    public static int countPrime(int[] arr) {
+        int count = 0;
+        for (int element : arr) {// int i = 0; i < arr.length; i++
+            boolean isPrime = true;
+            if (element < 2) continue; // if (arr[i] < 2) continue;
+            for (int j = 2; j < element; j++) { // int j = 2; j < arr[i]; j++
+                if (element % j == 0) {// if (arr[i] % j == 0)
+                    isPrime = false;
+                    break;
+                }
+            } if (isPrime) count++;
+        }
+        return count;
+    }
+
+    // wb30
+    public static boolean isAnagram(String s1, String s2){
+        if(s1.length() != s2.length()) return false;
+        else{
+            char[] c1 = s1.toLowerCase().toCharArray();
+            char[] c2 = s2.toLowerCase().toCharArray();
+            Arrays.sort(c1);
+            Arrays.sort(c2);
+            return Arrays.equals(c1, c2);
+        }
+    }
 
 
-
-
+    public static int mock3Bonus(String word) {
+        int sum = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.isDigit(word.charAt(i)))   {
+                sum += Integer.parseInt(String.valueOf(word.charAt(i)));
+            }
+        }
+        return sum;
+    }
 
 
 
