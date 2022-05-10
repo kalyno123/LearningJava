@@ -144,18 +144,7 @@ public class MockWhiteBoard {
         int[] wb46 = {0, 5, 4, 1, 3, 2};
         System.out.println(Arrays.toString(MockMethods.factorial(wb46)));
 
-        String mock3Bonus = au1b2; // 3
-        public static int nums(String word) {
-            int sum = 0;
-            for (int i = 0; i < word.length(); i++) {
-                if (Character.isDigit(word.charAt(i)) sum += Integer.parseInt(word.substring(i, i + 1));
-            }
-            return sum;
-        }
 
-        if (Character.isDigit(word.charAt(i)) {
-            sum += Integer.parseInt(str.charAt(i));
-        }
 
 
 
