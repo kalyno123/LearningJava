@@ -20,6 +20,8 @@ $ —> means must ends with ----> can only be use with finding something at the 
 | —> rep. OR
 ?= —> means anywhere in given testData
 ? —> means occurs once or none
+\w —> any characters (A-Z), (a-z), (0-9), and _
+\W —> anything that is not (A-Z), (a-z), (0-9), and _
 
 If testData should contain a specific char then hard code it into the regex parameter
 ex: validate phone number — “891-234-6587”.matches(“[1-9]\\d{2}-\\d{2}-\\d{3}”
@@ -34,7 +36,7 @@ ex: validate phone number — “891-234-6587”.matches(“[1-9]\\d{2}-?\\d{3}-
 [a-zA-z]{3} —> this is a regex for matching 3 letters
 
 “2008-11-20”.matches(“\\d{4})-(0?[1-9]|[1][012])-(0?[1-9]|[12][0-9]|3[01])”)
-—> validating date of birth in year-month-day format
+—> validating date_practice of birth in year-month-day format
 
 ^[a-zA-Z_$][a-zA-Z_$0-9]* —> checking if variableName matched Java’s naming convention. Here regex is saying variables must start with ^ lowercase, uppercase, underscore or money sign … followed by lowercase, uppercase, underscore, money sign or digits 0-9 .. * can be zero or more so this mean the followed by requirements can be as many as zero or more.
 

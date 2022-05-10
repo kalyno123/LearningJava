@@ -83,7 +83,7 @@ public class Homework16 {
         public static ArrayList<Integer> removeDuplicateNumbers(ArrayList<Integer> n){
             ArrayList<Integer> nums = new ArrayList<>();
             for (Integer element : n){
-                    if (!(nums.contains(element))) nums.add(element);
+                    if (!nums.contains(element)) nums.add(element);
             }
             return nums;
         }
@@ -117,16 +117,12 @@ public class Homework16 {
     */
         public static String removeExtraSpaces(String str){
             String[] str1 = str.trim().split(" ");
-            StringBuilder strContainer = new StringBuilder();
-
-            if (!(str.contains(" "))) {
-                System.out.println("This sentence does not have multiple words.");
-            } else {
-                for (String element : str1){
-                  if(!(element.isEmpty())) strContainer.append(element + " ");
-                }
+            String strContainer = "";
+            //System.out.println(Arrays.toString(str1));
+            for (String element : str1){
+                if(!(element.isEmpty())) strContainer += (element + " ");
             }
-            return strContainer.toString();
+            return strContainer.trim();
         }
 
         /* JOHNATHAN'S SOLUTION:

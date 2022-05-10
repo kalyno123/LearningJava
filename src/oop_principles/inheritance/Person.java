@@ -9,7 +9,7 @@ public class Person {
 
     //CUSTOM 4-ARGS CONSTRUCTOR
     public Person (String fName, String lName, int age, String gender) {
-        // this(fName, lName, age, gender); -- ask about this
+        // this(fName, lName, age, gender); --> ask about this
         this.fName = fName;
         this.lName = lName;
         this.age = age;
