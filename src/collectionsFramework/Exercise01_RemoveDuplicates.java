@@ -1,6 +1,7 @@
 package collectionsFramework;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 
 public class Exercise01_RemoveDuplicates {
@@ -45,6 +46,8 @@ public class Exercise01_RemoveDuplicates {
         //HashSet -> no prediction; since it does keep insertion order
         //LinkedHashSet -> is the one I need for this task since it keeps insertion order
         System.out.println(new LinkedHashSet<>(objects)); // [Computer, Phone, Mouse, Pen]
+
+        
 
 
     }

@@ -168,6 +168,18 @@ public class Homework19 {
         return arr;
     }
 
+    public static String[] categorizeChars(String str){
+        String[] catg = {"", "", ""};
+
+        for (char character : str.toCharArray()) {
+            if (Character.isLetter(character)) catg[0] += character + "";
+            else if (Character.isDigit(character)) catg[1] += character + "";
+            else catg[2] += character + "";
+        }
+
+        return catg;
+    }
+
 
     public static void main(String[] args) {
         System.out.println("\n-----TASK 1------\n");

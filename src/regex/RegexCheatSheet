@@ -22,6 +22,8 @@ $ —> means must ends with ----> can only be use with finding something at the 
 ? —> means occurs once or none
 \w —> any characters (A-Z), (a-z), (0-9), and _
 \W —> anything that is not (A-Z), (a-z), (0-9), and _
+(?i) starts case-insensitive mode
+(?-i) turns off case-insensitive mode
 
 If testData should contain a specific char then hard code it into the regex parameter
 ex: validate phone number — “891-234-6587”.matches(“[1-9]\\d{2}-\\d{2}-\\d{3}”

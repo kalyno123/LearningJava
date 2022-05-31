@@ -70,8 +70,33 @@ public class TwoDimensionalArrays {
             }
         }
 
+        /* Declaration – Syntax:
+        data_type[][] array_name = new data_type[x][y];
+        For example: int[][] arr = new int[10][20];
 
+        Initialization – Syntax:
+        array_name[row_index][column_index] = value;
+        For example: arr[0][0] = 1;
+        */
 
+        /* Direct Method of Declaration:
+        Syntax:
+        data_type[][] array_name = {
+                                    {valueR1C1, valueR1C2},
+                                    {valueR2C1, valueR2C2}
+                                   };
+
+        For example: int[][] arr = {{1, 2}, {3, 4}};
+        */
+
+        /* HOW TO ASSIGN ELEMENT'S VALUES
+        Syntax:
+        x[row_index][column_index]
+
+        For example:
+        int[][] arr = new int[10][20];
+        arr[0][0] = 1;
+        */
 
 
 
