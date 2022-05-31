@@ -13,6 +13,8 @@ public class Map_Methods {
         favorites.put("Car", "Lexus");
         favorites.put("Pet", "Turtle");
 
+        System.out.println(favorites.get("Pet").length()); // this is how to find length of the key's value
+
         // Keys: Day, Color, City, Car, Pet
         // Values: Friday, Black, Chicago, Lexus, Turtle
         // Since keys are always unique it'll return a unique collection aka SET so store keys in SET collection
