@@ -145,7 +145,7 @@ public class Homework20 {
     public static ArrayList<String> noXInVariables(ArrayList<String> s){
         for (int i = 0; i < s.size(); i++) {
             if(s.get(i).toLowerCase().contains("x")){
-                s.set(i, s.get(i).replaceAll("[xX]", ""));
+                s.set(i, s.get(i).replaceAll("(?i)" + "x", "")); // ("[xX]", "")
             }
             s.removeIf(String::isEmpty);
         }
