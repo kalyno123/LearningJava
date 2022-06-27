@@ -115,6 +115,16 @@ public class Homework22 {
             if (dup != -1) break;
         }
         return dup;
+
+        /* SALIH'S SOLUTION:
+        int[] dup = {-1, Integer.MAX_VALUE};
+        for (int i = 0; i < nums.length - 1; i++)
+            for (int j = i + 1; j < nums.length; j++)
+                if (nums[i] == nums[j] && j - i < dup[1]){
+                    dup[1] = j - i;
+                    dup[0] = nums[i];
+                }
+        return dup[0]; */
     }
 
 

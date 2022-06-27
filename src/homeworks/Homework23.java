@@ -15,15 +15,41 @@ public class Homework23 {
     Expected Output:
     {100=London, 101=Paris, 102=Berlin, 103=Chicago, 104=LA}
     */
-    public static Map<Integer, String> parseData(String s){
-        String[] words = s.replaceAll("[{}]", " ").trim().split(" ");
-        Map<Integer, String> map = new TreeMap<>();
+    public static TreeMap<Integer, String> parseData(String str){
+        String[] words = str.replaceAll("[{}]", " ").trim().split(" ");
+        TreeMap<Integer, String> map = new TreeMap<>();
         for (int i = 0; i < words.length; i++) {
             map.put(Integer.parseInt(words[i]), words[i + 1]);
             i++;
         }
         return map;
+
+        /* AKIN'S SOLUTION:
+        TreeMap<String, String> dataTable = new TreeMap<>();
+        while (str.contains("{")) {
+            String key = str.substring(str.indexOf("{") + 1, str.indexOf("}"));
+            str = str.substring(str.indexOf("}"));
+            String value = str.contains("{") ? str.substring(str.indexOf("}") + 1, str.indexOf("{")) : str.substring(1);
+            if (str.contains("{")) str = str.substring(str.indexOf("{"));
+            dataTable.put(key, value);
+        }
+        return dataTable; */
+
+        /* SALIH'S SOLUTION:
+        TreeMap<String, String> parsedData = new TreeMap<>();
+        for (String keyValue: data.split("\\{")) {
+            if (!keyValue.isEmpty()) {
+               // String key = keyValue.substring(0, keyValue.indexOf('}'));
+               // String value = keyValue.substring(keyValue.indexOf('}') + 1);
+                parsedData.put(
+                        keyValue.substring(0, keyValue.indexOf('}')),
+                        keyValue.substring(keyValue.indexOf('}') + 1)
+                );
+            }
+        }
+        return parsedData; */
     }
+
 
     /* Write a method called as calculateTotalPrice1();
     which takes a Map of some shopping items with their amounts and calculates the total prices as double.
@@ -38,19 +64,20 @@ public class Homework23 {
     Expected Output 1:          Expected Output 2:
     10.99                       19.12
     */
-    public static double calculateTotalPrice1(Map<String, Integer> groceries){
-        Map<String, Double> fruitPrices = new HashMap<>();
-        fruitPrices.put("Apple", 2.00);
-        fruitPrices.put("Orange", 3.29);
-        fruitPrices.put("Mango", 4.99);
-        fruitPrices.put("Pineapple", 5.25);
+    public static double calculateTotalPrice1(Map<String, Integer> quantityOfItems){
+        double totalPrice = 0;
+        HashMap<String, String> pricesOfItems = new HashMap<>();
+        pricesOfItems.put("Apple", "$2.00");
+        pricesOfItems.put("Orange", "$3.29");
+        pricesOfItems.put("Mango", "$4.99");
+        pricesOfItems.put("Pineapple", "$5.25");
 
-        double total = 0.0;
-        for (String s : groceries.keySet()) {
-            total += groceries.get(s) * fruitPrices.get(s);
+        for (String item : quantityOfItems.keySet()) {
+            totalPrice += Double.parseDouble(pricesOfItems.get(item).substring(1)) * quantityOfItems.get(item);
         }
-        return total;
+        return totalPrice;
     }
+
 
     /* Write a method calculateTotalPrice2();
     which takes a Map of some shopping items with their amounts and calculates the total prices as double.
@@ -73,15 +100,38 @@ public class Homework23 {
         fruitPrices.put("Orange", 3.29);
         fruitPrices.put("Mango", 4.99);
 
-        double sum = 0.00;
+        double total = 0.00;
         for (String key : shoppingList.keySet()) {
             for (int j = 1; j < shoppingList.get(key)+1; j++) {
-                if (key.equals("Apple") && j % 2 == 0) sum += fruitPrices.get(key) / 2.0;
+                if (key.equals("Apple") && j % 2 == 0) total += fruitPrices.get(key) / 2.0;
                 else if (key.equals("Mango") && j % 4 == 0);
-                else sum += fruitPrices.get(key);
+                else total += fruitPrices.get(key);
             }
         }
-        return Math.round(sum * 100.0) / 100.0;
+        return Math.round(total * 100.0) / 100.0;
+
+        /* SALIH'S SOLUTION:
+        HashMap<String, String> pricesOfItems = new HashMap<>();
+        pricesOfItems.put("Apple", "$2.00");
+        pricesOfItems.put("Orange", "$3.29");
+        pricesOfItems.put("Mango", "$4.99");
+
+        for (String item :quantityOfItems.keySet()) {
+            // Integer amountOfItem = quantityOfItems.get(item);
+            // mango --> 10 / 4 = 2
+            // mango -->  quantityOfItems.get(item) / 4 = 2
+
+            // Apple --> 11 / 2 = 5
+            // Apple --> 12 / 2 = 6
+            // Apple -->  quantityOfItems.get(item) / 2
+
+            totalPrice += Double.parseDouble(pricesOfItems.get(item).substring(1)) * quantityOfItems.get(item);
+            if (item.equals("Mango")) totalPrice -=
+                    Double.parseDouble(pricesOfItems.get(item).substring(1)) * (int)(quantityOfItems.get(item) / 4);
+            if (item.equals("Apple")) totalPrice -=
+                    (Double.parseDouble(pricesOfItems.get(item).substring(1)) / 2) * (int)(quantityOfItems.get(item) / 2);
+        }
+        return totalPrice; */
     }
 
 
