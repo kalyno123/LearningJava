@@ -17,10 +17,11 @@ public class Homework23 {
     */
     public static TreeMap<Integer, String> parseData(String str){
         String[] words = str.replaceAll("[{}]", " ").trim().split(" ");
+        // [104, LA, 101, Paris, 102, Berlin, 103, Chicago, 100, London]
         TreeMap<Integer, String> map = new TreeMap<>();
-        for (int i = 0; i < words.length; i++) {
-            map.put(Integer.parseInt(words[i]), words[i + 1]);
-            i++;
+        for (int i = 0; i < words.length; i +=2 ) {
+            map.put(Integer.parseInt(words[i]), words[i + 1]); //Integer.parseInt(words[i])
+           // i++; // this is increasing the loop by 2 --> so its only looping thur the #
         }
         return map;
 
@@ -48,6 +49,16 @@ public class Homework23 {
             }
         }
         return parsedData; */
+
+        /* BURAK'S SOLUTION:
+        static TreeMap<Object, Object> convertStringToTreeMap2(String str) {
+        TreeMap<Object, Object> treeMap = new TreeMap<>();
+        String[] newStr = str.replaceAll("[{}]", "_").split("_");
+
+        for (int i = 1; i < newStr.length; i += 2) {
+            treeMap.put(newStr[i].trim(), newStr[i + 1].trim());
+        }
+        return treeMap; */
     }
 
 

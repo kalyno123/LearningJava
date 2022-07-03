@@ -9,12 +9,12 @@ public class Homework22 {
     REMEMBER: Fibonacci series = 0, 1, 1, 2, 3, 5, 8, 13, 21
     */
     public static int[] fibonacciSeries1(int n){
-        /* int[] result = new int[n];
+        /* int[] result = new int[n+1];
 
         if (n > 0) result[0] = 0;
         if (n > 1) result[1] = 1;
 
-        for (int i = 0; i < n - 2; i++){// n-2 to avoid index out of bound exception when looping due to result[i+2]
+        for (int i = 0; i < result.length - 2; i++){// n-2 to avoid index out of bound exception when looping due to result[i+2]
             result[i + 2] = result[i + 1] + result[i];
         }
         return result; */
@@ -44,7 +44,7 @@ public class Homework22 {
         }
         return n3;
 
-        // return fibonacciSeries1(n)[n -1];
+        // return fibonacciSeries1(n)[n-1];
     }
 
     public static int fibRecursive(int n) {
