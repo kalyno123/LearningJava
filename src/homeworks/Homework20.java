@@ -284,5 +284,6 @@ public class Homework20 {
         System.out.println(noXInVariables(t9_test4));
 
 
+
     }
 }

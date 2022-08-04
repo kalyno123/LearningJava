@@ -207,7 +207,7 @@ public class Homework14 {
 
         /* KEREM'S SOLUTION:
         String string = "Java is fun";
-        String[] opposite = string.split(" ");
+        String[] opposite = string.split(" "); // [java, is, fun]
         for (int i = 0; i < opposite.length; i++){
             for (int j = opposite[i].length() - 1; j >= 0; j--) {
                 System.out.print(opposite[i].charAt(j));

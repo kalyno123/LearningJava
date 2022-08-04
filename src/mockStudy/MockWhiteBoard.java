@@ -52,7 +52,7 @@ public class MockWhiteBoard {
     */
         String word = "civic", rWord = "";
         for (int i = word.length()-1; i >= 0; i--){// INDEX: 4, 3, 2, 1, 0
-            rWord += word.charAt(i) + "";
+            rWord += word.charAt(i);
         }
         System.out.println(rWord.equals(word)); // OR word.equals(rWord)
 
@@ -71,12 +71,12 @@ public class MockWhiteBoard {
     GENERATE 10 NUMBER OF FIBONACCI (EXPECTED: 0 - 1 - 1 - 2 - 3 - 5 - 8 - 13 - 21 - 34)
     */
         int n1 = 0;
-        int n2 = 0;
+        int n2 = 1;
         int n3;
         String s = "";
 
         for (int i = 0; i < 10; i++){
-            // store the number
+            // store the 1st varible(number)
             s += n1 + " - ";
             // get the third number
             n3 = n1 + n2;
@@ -98,7 +98,7 @@ public class MockWhiteBoard {
         System.out.println("\n=====removedups wb27=====");
         int[] wb27 = {0, 5, 4, 0, 0}; // TEST DATA
         //HashSet<Integer> a = new HashSet<>(); // container to hold uniques (non-dups)
-        TreeSet<Integer> a = new TreeSet<>(); // either or collection would work
+        TreeSet<Integer> a = new TreeSet<>(); // any SET collection would work
         for (int element : wb27){
             a.add(element);
         }

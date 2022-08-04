@@ -100,7 +100,7 @@ public class Homework12 {
 
     int countLetters = 0, countLowerCase = 0, countUpperCase = 0, countDigits = 0, countSpecials = 0;
     for(char element : characters) {
-        if (Character.isLetter(element)) {countLetters++;
+        if (Character.isLetter(element)) { countLetters++;
             if (Character.isUpperCase(element)) countUpperCase++;
             else //(Character.isLowerCase(element))
                 countLowerCase++;

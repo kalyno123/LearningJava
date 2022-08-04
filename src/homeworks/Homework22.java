@@ -175,5 +175,12 @@ public class Homework22 {
 
         int[] t5_testData4 = {1, 2, 3, 3, 4, 1};
         System.out.println(firstDuplicate(t5_testData4));
+
+
+    /* TASK 1: Create a method called fibonacciSeries1();
+    This method will take an int argument as n, and it will return n series of Fibonacci numbers as an int array.
+    REMEMBER: Fibonacci series = 0, 1, 1, 2, 3, 5, 8, 13, 21
+    */
+
     }
 }

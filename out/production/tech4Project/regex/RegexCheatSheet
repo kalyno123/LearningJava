@@ -6,12 +6,12 @@ PATTERN SYMBOLS:
 {#} —> how many char is required; ex: “\\d{5}” —> need 5 digits = 60805
 {#,} —> how many char is required or more; the common means “or more” ex: \\d{3,} — this means 3 or more digits
 {#,#} —> how many char in total is required between given values ex: {8,20} — this means need minimum 8 chars , maximum 20 chars
-+ —> rep. one or more ex: “\\d+” —> means id test data has 1 or more digit then ok
++ —> rep. one or more ex: “\\d+” —> means if test data has 1 or more digit then ok
 [a-zA-z]
 [a-zA-Z] —> rep. lowercase+uppercase letters a-z (not case sensitive)
 [0-9] —> rep. numbers. Can be set as 1-9, 5-8, 2-6 etc …
 1[0-9] —> rep.numbers 10-19 .. use 2[0-9] to rep. numbers 20-29 and so on. Can also be 1[012] to rep. 10, 11, 12 if you only want the pattern to be up to certain values. Can also be [12][0-9] to rep 10-19 20-29 ..
-Its helpful to know I=that its read as [12][012]: 1 or 2 followed by 0 or 1 or 2.
+Its helpful to know I that its read as [12][012]: 1 or 2 followed by 0 or 1 or 2.
 [12][0-9]: 1 or 2 followed by 0-9
 . —> rep. any char
 * —> rep. zero or more

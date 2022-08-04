@@ -1,8 +1,6 @@
 package homeworks;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Homework23 {
 
@@ -15,15 +13,16 @@ public class Homework23 {
     Expected Output:
     {100=London, 101=Paris, 102=Berlin, 103=Chicago, 104=LA}
     */
-    public static TreeMap<Integer, String> parseData(String str){
+    public static TreeMap<String, String> parseData(String str){
         String[] words = str.replaceAll("[{}]", " ").trim().split(" ");
         // [104, LA, 101, Paris, 102, Berlin, 103, Chicago, 100, London]
-        TreeMap<Integer, String> map = new TreeMap<>();
-        for (int i = 0; i < words.length; i +=2 ) {
-            map.put(Integer.parseInt(words[i]), words[i + 1]); //Integer.parseInt(words[i])
-           // i++; // this is increasing the loop by 2 --> so its only looping thur the #
+        TreeMap<String, String> map = new TreeMap<>();
+        for (int i = 0; i < words.length; i += 2 ) {// this is increasing the loop by 2 --> so its only looping thur the ever other element(#)
+            map.put(words[i], words[i + 1]);
         }
         return map;
+
+
 
         /* AKIN'S SOLUTION:
         TreeMap<String, String> dataTable = new TreeMap<>();
@@ -85,6 +84,7 @@ public class Homework23 {
 
         for (String item : quantityOfItems.keySet()) {
             totalPrice += Double.parseDouble(pricesOfItems.get(item).substring(1)) * quantityOfItems.get(item);
+                        // casting Double.parseDouble here bc it's a set of the String keys
         }
         return totalPrice;
     }
@@ -146,6 +146,7 @@ public class Homework23 {
     }
 
 
+
     public static void main(String[] args) {
         System.out.println("\n-----TASK 1------");
         System.out.println(parseData("{104}LA{101}Paris{102}Berlin{103}Chicago{100}London"));
@@ -173,5 +174,36 @@ public class Homework23 {
         t3_Map2.put("Mango", 8);
         t3_Map2.put("Orange", 3);
         System.out.println(calculateTotalPrice2(t3_Map2));
+
+    /* Write a method called as calculateTotalPrice1();
+    which takes a Map of some shopping items with their amounts and calculates the total prices as double.
+    Item prices are given below:
+    Apple = $2.00
+    Orange = $3.29
+    Mango = $4.99
+    Pineapple = $5.25
+
+    Test Data 1:                Test Data 2:
+    {Apple=3, Mango = 1}        {Apple=2, Pineapple = 1, Orange=3}
+    Expected Output 1:          Expected Output 2:
+    10.99                       19.12
+    */
+        Map<String, Double> fruitPrices = new HashMap<>();
+        fruitPrices.put("Apple", 2.00);
+        fruitPrices.put("Orange", 3.29);
+        fruitPrices.put("Mango", 4.99);
+
+        Map<String, Integer> fruitCount = new HashMap<>();
+        fruitCount.put("Apple", 3);
+        fruitCount.put("Mango", 1);
+
+        double totalPrice = 0;
+        for (String fruit : fruitCount.keySet()){ // This method is used to return a Set view of the keys contained in this map ex: {apple,orange,mango}
+            totalPrice += fruitPrices.get(fruit) * fruitCount.get(fruit);
+        }
+        System.out.println(totalPrice);
+
+
+
     }
 }
