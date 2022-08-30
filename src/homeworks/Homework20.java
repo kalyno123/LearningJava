@@ -1,9 +1,6 @@
 package homeworks;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Locale;
+import java.util.*;
 
 public class Homework20 {
 
@@ -282,6 +279,8 @@ public class Homework20 {
         t9_test4.add("Xx");
         t9_test4.add("ABC");
         System.out.println(noXInVariables(t9_test4));
+
+
 
 
 

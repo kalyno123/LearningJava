@@ -88,7 +88,7 @@ public class Homework22 {
         //if (x == 1) return true;
         //else return (x % 3 == 0);
 
-        if (x < 1 ) return false;
+        if (x < 1) return false;
         double doubleNum = x;
         while (doubleNum % 3 == 0){
             doubleNum /= 3;

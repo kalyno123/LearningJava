@@ -30,7 +30,7 @@ public class Map_Methods {
         System.out.println(values.stream().filter(element -> element.length() > 5).count()); // 3
         System.out.println(keys.stream().filter(element -> element.toLowerCase().startsWith("c")).count()); // 3
 
-        Set<Map.Entry<String, String>> entries= favorites.entrySet();
+        Set<Map.Entry<String, String>> entries = favorites.entrySet();
 
         for (Map.Entry<String, String> entry : entries) {
             System.out.println("My favorite " + entry.getKey() + " is = " +  entry.getValue());

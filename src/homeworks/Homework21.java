@@ -56,9 +56,8 @@ public class Homework21 {
     */
     public static int findBiggestNumber(String s) {
         int max = 0;
-        String temp = s.replaceAll("[^\\d]", " ");
-        String[] temp2 = temp.replaceAll("[\\s]+", " ").trim().split(" ");
-        for (String element : temp2) {
+        String[] temp = s.replaceAll("[^\\d]", " ").trim().split(" ");
+        for (String element : temp) {
             if (!element.isEmpty()) {
                 if (Integer.parseInt(element) > max) max = Integer.parseInt(element);
             }
@@ -71,8 +70,8 @@ public class Homework21 {
     NOTE: If given String is empty, then return empty String.
     NOTE: It is case sensitive!!!
     */
-    public static String countSequenceOfCharacters(String s) {
-        /* String sequence = "";
+    public static String countSequenceOfCharacters(String str) {
+        String sequence = "";
         int count = 1;
         for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j < str.length(); j++) {
@@ -85,9 +84,9 @@ public class Homework21 {
                 count = 1;
             }
         }
-        return sequence; */
+        return sequence;
 
-        StringBuilder result = new StringBuilder();
+        /*StringBuilder result = new StringBuilder();
         int count = 0;
         for (int i = 0; i < s.length(); i++) {
             if (i < s.length()-1 && s.charAt(i) == s.charAt(i+1)){
@@ -99,7 +98,7 @@ public class Homework21 {
                 count = 0;
             }
         }
-        return result.toString();
+        return result.toString();*/
 
     }
 

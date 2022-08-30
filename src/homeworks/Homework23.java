@@ -17,12 +17,10 @@ public class Homework23 {
         String[] words = str.replaceAll("[{}]", " ").trim().split(" ");
         // [104, LA, 101, Paris, 102, Berlin, 103, Chicago, 100, London]
         TreeMap<String, String> map = new TreeMap<>();
-        for (int i = 0; i < words.length; i += 2 ) {// this is increasing the loop by 2 --> so its only looping thur the ever other element(#)
+        for (int i = 0; i < words.length; i += 2 ) {// this is increasing the loop by 2 --> so its only looping thur ever other element(#)
             map.put(words[i], words[i + 1]);
         }
         return map;
-
-
 
         /* AKIN'S SOLUTION:
         TreeMap<String, String> dataTable = new TreeMap<>();
